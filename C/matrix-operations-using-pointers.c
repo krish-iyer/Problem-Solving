@@ -1,6 +1,8 @@
 #include<stdio.h>
 void diagonals(int[3][3]);
 void display(int[3][3]);
+void transpose(int[3][3]);
+
 int main()
 {
   int i,j,mat[3][3];
@@ -13,31 +15,41 @@ int main()
   }
   display(mat);
   diagonals(mat);
+  transpose(mat);
   return 0;
 }
 void diagonals(int mat[3][3])
 {
-  int i=0, *add;
+  int i,*add;
   add=&mat[0][0];
   printf("diagonal elements are:");
-  while(i<3)
+  for(i=0;i<3;i++)
   {
-    printf("%u,",*add);
+    printf("%d,",*add);
     add=add+4;
-    i++;
   }
 }
 void display(int mat[3][3])
 {
-  int i=0, *add;
+  int i,*add;
   add=&mat[0][0];
-  while(i<10)
+  for(i=0;i<10;i++)
   {
-    printf("%u\t",*add);
-    if(i==2||i==5||i==8)
-        printf("\n");
-    add++;
-    i++;
+    printf("%d\t",*add++);
+    if(i==2||i==5||i==8){
+      printf("\n");
+    }
   }
-
+}
+void transpose(int mat[3][3])
+{
+  int i,*add;
+  add=&mat[0][0];
+  for(i=0;i<10;i++)
+  {
+    printf("%d\t",*add++);
+    if(i==2||i==5||i==8){
+      printf("\n");
+    }
+  }
 }
